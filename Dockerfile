@@ -17,4 +17,4 @@ RUN pip install poetry && \
 
 RUN chmod +x docker-entrypoint.sh
 
-ENTRYPOINT ["poetry", "run", "python", "main.py"]
+ENTRYPOINT ["./docker-entrypoint.sh"]
