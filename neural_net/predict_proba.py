@@ -19,11 +19,12 @@ class PredictProba:
             train_test_split(X, y_named, y, random_state=0)
         gbrt = GradientBoostingClassifier(random_state=0)
         gbrt.fit(X_train, y_train_named)
-
         return {
             "array_form": list(X_test.shape),
             "decision_func_form": list(gbrt.decision_function(X_test).shape),
-            "decision_func": list(gbrt.decision_function(X_test))
+            "decision_func": list(gbrt.decision_function(X_test)),
+            "decision_func_threshold": list(bool(x) for x in gbrt.decision_function(X_test) > 0),
+            "predict": list(gbrt.predict(X_test))
         }
 
 
