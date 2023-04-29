@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usovik-task
+  labels:
+    app: usovik-task
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: usovik-task
+  template:
+    metadata:
+      labels:
+        app: usovik-task
+    spec:
+      containers:
+      - name: usovik-task
+        image: <container image>  # Нужно сбилдить образ, потом указать его тут
+        ports:
+        - containerPort: 5000

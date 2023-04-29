@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: usovik-task
+spec:
+  rules:
+  - host: usovik-task.example.com
+    http:
+      paths:
+      - path: /api
+        backend:
+          serviceName: usovik-task
+          servicePort: http
+
+#В этом манифесте мы указываем хост-имя, на которое будет доступно приложение,
+# а также настраиваем перенаправление на Service, который мы создали в прошлом манифесте.

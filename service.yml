@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: usovik-task
+spec:
+  type: ClusterIP
+  selector:
+    app: usovik-task
+  ports:
+  - name: http
+    port: 80
+    targetPort: 5000
+
+# мы определяем порт 80 и настраиваем перенаправление на порт 5000 контейнера.
