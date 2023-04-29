@@ -136,3 +136,22 @@ array_form,decision_func_form,decision_func,decision_func_threshold,predict
 "[25, 2]",[25],"[4.135926033783832, -1.7016991679374063, -3.9510609908761904, -3.626095524547402, 4.289866423997604, 3.661660811041725, -7.690971785101899, 4.110016863134256, 1.107539366450744, 3.4078222171316632, -6.462559545052498, 4.289866423997604, 3.9015634575309557, -1.2003124679679482, 3.661660811041725, -4.172311573772344, -1.2301007915562352, -3.915762234959999, 4.036027830087543, 4.110016863134256, 4.110016863134256, 0.6570901382382097, 2.6982626516772226, -2.656732741491535, -1.8677659597719074]","[True, False, False, False, True, True, False, True, True, True, False, True, True, False, True, False, False, False, True, True, True, True, True, False, False]","['red', 'blue', 'blue', 'blue', 'red', 'red', 'blue', 'red', 'red', 'red', 'blue', 'red', 'red', 'blue', 'red', 'blue', 'blue', 'blue', 'red', 'red', 'red', 'red', 'red', 'blue', 'blue']"
 "[25, 2]",[25],"[4.135926033783832, -1.7016991679374063, -3.9510609908761904, -3.626095524547402, 4.289866423997604, 3.661660811041725, -7.690971785101899, 4.110016863134256, 1.107539366450744, 3.4078222171316632, -6.462559545052498, 4.289866423997604, 3.9015634575309557, -1.2003124679679482, 3.661660811041725, -4.172311573772344, -1.2301007915562352, -3.915762234959999, 4.036027830087543, 4.110016863134256, 4.110016863134256, 0.6570901382382097, 2.6982626516772226, -2.656732741491535, -1.8677659597719074]","[True, False, False, False, True, True, False, True, True, True, False, True, True, False, True, False, False, False, True, True, True, True, True, False, False]","['red', 'blue', 'blue', 'blue', 'red', 'red', 'blue', 'red', 'red', 'red', 'blue', 'red', 'red', 'blue', 'red', 'blue', 'blue', 'blue', 'red', 'red', 'red', 'red', 'red', 'blue', 'blue']"
 ```
+
+## Разворачивание в кубере 
+
+1. Создайте Docker-образ приложения
+
+```
+docker build -t usovik-task .
+```
+
+2. Указать имя образа в Deployment.yml
+
+3. Запуск
+
+```
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f ingress.yaml
+```
+
